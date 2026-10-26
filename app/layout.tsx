@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://aquamind.vercel.app'
-  ),
+  metadataBase: new URL('https://aquamindai.github.io'),
   title: 'AquaMind AI — Ağıllı Akvakültür və Akvaponika Monitorinqi',
   description: 'Azərbaycan Respublikası — Real vaxtlı IoT və Süni İntellekt əsaslı su ekosistemi, balıq və bitki bəslənmə monitorinq sistemi.',
   keywords: [
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
     'Süni İntellekt',
     'Random Forest',
     'Next.js',
-    'Vercel'
+    'GitHub Pages'
   ],
   authors: [{ name: 'Suleyman Hajizadeh' }],
   openGraph: {

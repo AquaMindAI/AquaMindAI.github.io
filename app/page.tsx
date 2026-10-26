@@ -220,16 +220,13 @@ export default function Dashboard() {
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a1628] border border-[#38bdf8]/30 text-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] animate-ping"></span>
               <span className="text-[#38bdf8] font-medium">
-                {systemStatus?.mode === 'live_backend' ? 'Fiziki IoT Backend Qoşulub' : 'Vercel Bulud Rejimi (Canlı Demo)'}
+                {systemStatus?.mode === 'live_backend' ? 'Fiziki IoT Backend Qoşulub' : 'Bulud Rejimi (Canlı Demo)'}
               </span>
             </div>
 
-            {/* Vercel Badge */}
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-white">
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                <path d="M24 22.525H0l12-21.05 12 21.05z" />
-              </svg>
-              <span>Vercel Ready</span>
+            {/* Cloud Ready Badge */}
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 text-xs font-medium text-[#38bdf8]">
+              <span>🌊 GitHub Pages Live</span>
             </div>
 
             {/* Refresh Button */}
@@ -268,11 +265,11 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* SIMULATION CONTROLS BAR (FOR INTERACTIVE TESTING ON VERCEL) */}
+        {/* SIMULATION CONTROLS BAR (FOR INTERACTIVE TESTING) */}
         <div className="glass p-4 rounded-xl border border-amber-500/30 bg-amber-500/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-xs">
             <span className="text-amber-400 font-bold text-sm">⚡ Simulyasiya və Sınaq Paneli:</span>
-            <span className="text-[#94a3b8] hidden sm:inline">Vercel üzərində canlı anomaliyaları və AI reaksiyasını test edin:</span>
+            <span className="text-[#94a3b8] hidden sm:inline">Canlı anomaliyaları və AI reaksiyasını birbaşa test edin:</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -636,7 +633,7 @@ export default function Dashboard() {
         {/* FOOTER */}
         <footer className="text-center text-[#94a3b8] text-xs py-6 border-t border-white/5 space-y-1">
           <p className="font-medium text-white">AquaMind AI v2.0 — Ağıllı Akvakültür və Akvaponika Sistemi</p>
-          <p>Bakı, Azərbaycan Respublikası | Vercel Serverless Ready · Next.js 14 · FastAPI · Scikit-Learn</p>
+          <p>Bakı, Azərbaycan Respublikası | GitHub Pages & Cloud Ready · Next.js 14 · FastAPI · Scikit-Learn</p>
         </footer>
 
       </div>

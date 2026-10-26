@@ -1,5 +1,5 @@
 // AquaMind AI — Serverless Telemetry & Simulation Engine
-// Used for Vercel deployment when running in Cloud Demo mode or proxying to physical FastAPI backend.
+// Used for cloud & GitHub Pages deployment when running in Standalone mode or proxying to physical FastAPI backend.
 
 export interface SensorReading {
   id: number;
