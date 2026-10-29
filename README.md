@@ -5,7 +5,15 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 > 🌐 **Live Website**: [https://aquamindai.github.io](https://aquamindai.github.io)  
-> 💻 **Core Enterprise Repository (Backend, AI, DB, Hardware)**: [AquaMindAI/AquaMindAI](https://github.com/AquaMindAI/AquaMindAI)
+> 🔒 **Core Enterprise Repository & Research Data (Private)**: [AquaMindAI/AquaMindAI](https://github.com/AquaMindAI/AquaMindAI)
+
+> [!IMPORTANT]
+> ### 🔒 Məlumatların Məxfiliyi və Giriş İcazəsi (Private Data & Access Request)
+> **Bu layihənin əsas tədqiqat dataları, eksperimental telemetriya bazası, AI modelləri, mikrokontroller proqram təminatı və tam mənbə kodu (`AquaMindAI` monorepo) məxfidir (`Private`).**
+>
+> Akademik tədqiqat, elmi rəy (peer-review), tərəfdaşlıq və ya məxfi repozitoriyalara və datalara **giriş icazəsi (access)** əldə etmək istəyirsinizsə, rəsmi elektron poçt ünvanları vasitəsilə müraciət edə bilərsiniz:
+> - 📧 **Əsas E-poçt:** [suleyman.hacizade1@gmail.com](mailto:suleyman.hacizade1@gmail.com)
+> - 🎓 **Akademik E-poçt:** [suleyman.hacizade.232bioing@wcu.edu.az](mailto:suleyman.hacizade.232bioing@wcu.edu.az)
 
 Welcome to the official frontend deployment repository of **AquaMind AI**, the intelligent closed-loop IoT and machine learning platform for precision aquaculture and circular aquaponics.
 

@@ -229,6 +229,14 @@ export default function Dashboard() {
               <span>🌊 GitHub Pages Live</span>
             </div>
 
+            {/* Private Data & Access Request Badge */}
+            <a
+              href="mailto:suleyman.hacizade1@gmail.com?subject=AquaMind%20AI%20-%20Private%20Data%20%26%20Repository%20Access%20Request"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-xs font-semibold text-rose-300 transition-all"
+              title="Məxfi datalara və əsas repozitoriyaya giriş üçün müraciət edin">
+              <span>🔒 Private Data · Access Müraciət</span>
+            </a>
+
             {/* Refresh Button */}
             <button
               onClick={() => fetchAll(true)}
@@ -630,10 +638,46 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* PRIVATE DATA & ACCESS REQUEST SECTION */}
+        <div className="glass p-6 rounded-2xl border border-rose-500/30 bg-gradient-to-r from-[#0a1628]/90 via-rose-950/20 to-[#0a1628]/90 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-2 max-w-3xl">
+            <div className="flex items-center gap-2.5">
+              <span className="text-xl p-2 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-400">🔒</span>
+              <h4 className="text-base md:text-lg font-bold text-white">
+                Məlumatların Məxfiliyi və Giriş İcazəsi (Private Data &amp; Access Request)
+              </h4>
+            </div>
+            <p className="text-xs md:text-sm text-[#cbd5e1] leading-relaxed">
+              Bu platformanın əsas tədqiqat dataları, eksperimental telemetriya bazası, öyrədilmiş AI modelləri, mikrokontroller proqram təminatı və tam mənbə kodu (<code className="text-[#38bdf8] font-mono">AquaMindAI</code> monorepo) əqli mülkiyyət və elmi təhlükəsizlik məqsədilə <strong className="text-rose-400">məxfidir (Private)</strong>. Akademik tədqiqat, elmi rəy, tərəfdaşlıq və ya məxfi datalara <strong className="text-white">giriş icazəsi (access)</strong> əldə etmək üçün rəsmi elektron poçt ünvanına müraciət edə bilərsiniz:
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 w-full lg:w-auto flex-shrink-0">
+            <a
+              href="mailto:suleyman.hacizade1@gmail.com?subject=AquaMind%20AI%20-%20Private%20Data%20%26%20Repository%20Access%20Request"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#38bdf8] hover:bg-[#0284c7] text-[#030f1a] hover:text-white font-bold text-xs transition-all shadow-lg shadow-[#38bdf8]/20">
+              <span>✉️</span>
+              <span>suleyman.hacizade1@gmail.com</span>
+            </a>
+            <a
+              href="mailto:suleyman.hacizade.232bioing@wcu.edu.az?subject=AquaMind%20AI%20-%20Academic%20Data%20Access%20Request"
+              className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#0a1628] hover:bg-[#1e3a5f] border border-[#38bdf8]/30 text-[#38bdf8] font-semibold text-xs transition-all">
+              <span>🎓</span>
+              <span>suleyman.hacizade.232bioing@wcu.edu.az</span>
+            </a>
+          </div>
+        </div>
+
         {/* FOOTER */}
-        <footer className="text-center text-[#94a3b8] text-xs py-6 border-t border-white/5 space-y-1">
+        <footer className="text-center text-[#94a3b8] text-xs py-6 border-t border-white/5 space-y-1.5">
           <p className="font-medium text-white">AquaMind AI v2.0 — Ağıllı Akvakültür və Akvaponika Sistemi</p>
-          <p>Bakı, Azərbaycan Respublikası | GitHub Pages & Cloud Ready · Next.js 14 · FastAPI · Scikit-Learn</p>
+          <p>Bakı, Azərbaycan Respublikası | GitHub Pages &amp; Cloud Ready · Next.js 14 · FastAPI · Scikit-Learn</p>
+          <p className="text-[#cbd5e1]">
+            🔒 Əsas datalar və kod bazası <strong>Private</strong>-dir · Giriş (Access) üçün müraciət:{' '}
+            <a href="mailto:suleyman.hacizade1@gmail.com" className="text-[#38bdf8] hover:underline font-semibold">
+              suleyman.hacizade1@gmail.com
+            </a>
+          </p>
         </footer>
 
       </div>
