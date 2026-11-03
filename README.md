@@ -3,6 +3,7 @@
 [![GitHub Pages](https://img.shields.io/badge/Live%20Website-https%3A%2F%2Faquamindai.github.io-brightgreen)](https://aquamindai.github.io)
 [![Next.js](https://img.shields.io/badge/Frontend-Next.js%2014%20Static-black)](https://nextjs.org)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0003--7842--1921-green.svg)](https://orcid.org/0009-0003-7842-1921)
 
 > 🌐 **Live Website**: [https://aquamindai.github.io](https://aquamindai.github.io)  
 > 🔒 **Core Enterprise Repository & Research Data (Private)**: [AquaMindAI/AquaMindAI](https://github.com/AquaMindAI/AquaMindAI)
@@ -18,6 +19,22 @@
 Welcome to the official frontend deployment repository of **AquaMind AI**, the intelligent closed-loop IoT and machine learning platform for precision aquaculture and circular aquaponics.
 
 ![AquaMind AI Banner](AquaMind-AI.png)
+
+---
+
+## 🧭 Public Platform Routes & Architecture Sitemap
+
+All pages are pre-rendered statically with enterprise Search Engine Optimization (SEO), Open Graph cards, and Schema.org JSON-LD structured data:
+
+| URL / Path | Title & Description | Schema Type |
+|---|---|---|
+| [**/**](https://aquamindai.github.io/) | **AquaMind AI Dashboard** — Real-time telemetry, multi-pool monitoring & ML forecasts | `WebApplication`, `Organization` |
+| [**/research/**](https://aquamindai.github.io/research/) | **Scientific Research & Publication** — Peer-reviewed *RJAAA* framework, author bio & equations | `ScholarlyArticle`, `Person` |
+| [**/architecture/**](https://aquamindai.github.io/architecture/) | **System Architecture & IoT** — 4-tier CPS architecture, ESP32 pinout & FastAPI/AI specs | `TechArticle` |
+| [**/access/**](https://aquamindai.github.io/access/) | **Private Data & Access Policy** — Verification protocol and email contact links | `ContactPage` |
+| [**/wiki/**](https://aquamindai.github.io/wiki/) | **Knowledge Base & Documentation** — Nitrification biology, sensor calibration & FAQ | `FAQPage`, `CollectionPage` |
+| [**/sitemap.xml**](https://aquamindai.github.io/sitemap.xml) | **XML Sitemap** — Google standard sitemap with images & priority weights | XML Schema |
+| [**/robots.txt**](https://aquamindai.github.io/robots.txt) | **Robots Directives** — Search engine crawler instructions (Google, Bing, Yandex, etc.) | TXT Directives |
 
 ---
 
@@ -51,7 +68,7 @@ npm run build
 
 ---
 
-## 📜 License
+## 📜 License & Authorship
 
 Licensed under the [Apache License, Version 2.0](LICENSE).  
-Copyright © 2026 **AquaMind AI** / **Suleyman Hajizade**.
+Copyright © 2026 **AquaMind AI** / **Suleyman Hajizade** (Western Caspian University).

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import {
   generateLiveReading,
   generateHistoryReadings,
@@ -15,12 +17,21 @@ import {
 } from '../lib/telemetry';
 
 export default function Dashboard() {
-  const [latest, setLatest] = useState<any>(null);
-  const [history, setHistory] = useState<any[]>([]);
-  const [alerts, setAlerts] = useState<any[]>([]);
-  const [systemStatus, setSystemStatus] = useState<any>(null);
-  const [waterForecast, setWaterForecast] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const [latest, setLatest] = useState<any>(() => generateLiveReading());
+  const [history, setHistory] = useState<any[]>(() => generateHistoryReadings(24, 36));
+  const [alerts, setAlerts] = useState<any[]>(() => {
+    const init = generateLiveReading();
+    return computeActiveAlerts(init);
+  });
+  const [systemStatus, setSystemStatus] = useState<any>(() => {
+    const init = generateLiveReading();
+    return computeSystemStatus(init);
+  });
+  const [waterForecast, setWaterForecast] = useState<any>(() => {
+    const init = generateLiveReading();
+    return computeWaterForecast(init);
+  });
+  const [loading, setLoading] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [tab, setTab] = useState("water_temp");
   const [timeRange, setTimeRange] = useState("24");
@@ -202,51 +213,57 @@ export default function Dashboard() {
       <div className="max-w-7xl mx-auto space-y-6">
 
         {/* TOP BANNER / NAVIGATION */}
-        <header className="glass p-6 rounded-2xl flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 shadow-2xl">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="text-4xl">🌊</span>
-              <div>
-                <h1 className="text-3xl md:text-4xl font-extrabold gradient-text tracking-tight">AquaMind AI</h1>
-                <p className="text-xs md:text-sm text-[#94a3b8] mt-1">
-                  Ağıllı Akvakültür və Akvaponika Monitorinq Platforması — Azərbaycan Respublikası
-                </p>
+        <Navbar
+          active="dashboard"
+          isLive={systemStatus?.mode === 'live_backend'}
+          rightContent={
+            <>
+              {/* Deployment / Mode Badge */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a1628] border border-[#38bdf8]/30 text-xs">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] animate-ping"></span>
+                <span className="text-[#38bdf8] font-medium">
+                  {systemStatus?.mode === 'live_backend' ? 'Fiziki IoT Backend Qoşulub' : 'Bulud Rejimi (Canlı Demo)'}
+                </span>
               </div>
-            </div>
+
+              {/* Refresh Button */}
+              <button
+                onClick={() => fetchAll(true)}
+                disabled={refreshing}
+                className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-[#38bdf8]/10 hover:bg-[#38bdf8]/20 border border-[#38bdf8]/30 text-xs font-semibold text-[#38bdf8] transition-all disabled:opacity-50">
+                <span className={refreshing ? 'animate-spin' : ''}>🔄</span>
+                <span>{refreshing ? 'Yenilənir...' : 'Yenilə'}</span>
+              </button>
+            </>
+          }
+        />
+
+        {/* HERO / WELCOME BANNER FOR SEO & CRAWLERS */}
+        <div className="glass px-6 py-4 rounded-xl border border-[#38bdf8]/20 bg-gradient-to-r from-[#071322] via-[#0a1f38]/60 to-[#071322] flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-lg">
+          <div>
+            <h1 className="text-lg md:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              <span>🌊</span>
+              <span>AquaMind AI — Ağıllı Akvakültür və Akvaponika Monitorinq Paneli</span>
+            </h1>
+            <p className="text-xs text-[#94a3b8] mt-1">
+              Azərbaycan və Xəzər hövzəsi üçün IoT sensor telemetriyası, süni intellekt (Random Forest) su proqnozu və qapalı dövriyyəli idarəetmə platforması.
+            </p>
           </div>
-
-          <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-start lg:justify-end">
-            {/* Deployment / Mode Badge */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0a1628] border border-[#38bdf8]/30 text-xs">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] animate-ping"></span>
-              <span className="text-[#38bdf8] font-medium">
-                {systemStatus?.mode === 'live_backend' ? 'Fiziki IoT Backend Qoşulub' : 'Bulud Rejimi (Canlı Demo)'}
-              </span>
-            </div>
-
-            {/* Cloud Ready Badge */}
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 text-xs font-medium text-[#38bdf8]">
-              <span>🌊 GitHub Pages Live</span>
-            </div>
-
-            {/* Private Data & Access Request Badge */}
+          <div className="flex flex-wrap items-center gap-2 text-xs flex-shrink-0">
             <a
-              href="mailto:suleyman.hacizade1@gmail.com?subject=AquaMind%20AI%20-%20Private%20Data%20%26%20Repository%20Access%20Request"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-xs font-semibold text-rose-300 transition-all"
-              title="Məxfi datalara və əsas repozitoriyaya giriş üçün müraciət edin">
-              <span>🔒 Private Data · Access Müraciət</span>
+              href="/research/"
+              className="px-3 py-1.5 rounded-lg bg-[#38bdf8]/15 hover:bg-[#38bdf8]/25 border border-[#38bdf8]/30 text-[#38bdf8] font-semibold transition-all flex items-center gap-1.5">
+              <span>📄 Elmi Məqalə (RJAAA)</span>
+              <span>→</span>
             </a>
-
-            {/* Refresh Button */}
-            <button
-              onClick={() => fetchAll(true)}
-              disabled={refreshing}
-              className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-[#38bdf8]/10 hover:bg-[#38bdf8]/20 border border-[#38bdf8]/30 text-xs font-semibold text-[#38bdf8] transition-all disabled:opacity-50">
-              <span className={refreshing ? 'animate-spin' : ''}>🔄</span>
-              <span>{refreshing ? 'Yenilənir...' : 'Yenilə'}</span>
-            </button>
+            <a
+              href="/architecture/"
+              className="px-3 py-1.5 rounded-lg bg-[#0a1628] hover:bg-[#1e3a5f] border border-white/10 text-[#cbd5e1] font-semibold transition-all flex items-center gap-1.5">
+              <span>🏛️ Sistem Arxitekturası</span>
+              <span>→</span>
+            </a>
           </div>
-        </header>
+        </div>
 
         {/* POOL & SPECIES SELECTOR BAR */}
         <div className="glass p-4 rounded-xl flex flex-col md:flex-row justify-between items-center gap-4">
@@ -669,16 +686,7 @@ export default function Dashboard() {
         </div>
 
         {/* FOOTER */}
-        <footer className="text-center text-[#94a3b8] text-xs py-6 border-t border-white/5 space-y-1.5">
-          <p className="font-medium text-white">AquaMind AI v2.0 — Ağıllı Akvakültür və Akvaponika Sistemi</p>
-          <p>Bakı, Azərbaycan Respublikası | GitHub Pages &amp; Cloud Ready · Next.js 14 · FastAPI · Scikit-Learn</p>
-          <p className="text-[#cbd5e1]">
-            🔒 Əsas datalar və kod bazası <strong>Private</strong>-dir · Giriş (Access) üçün müraciət:{' '}
-            <a href="mailto:suleyman.hacizade1@gmail.com" className="text-[#38bdf8] hover:underline font-semibold">
-              suleyman.hacizade1@gmail.com
-            </a>
-          </p>
-        </footer>
+        <Footer />
 
       </div>
     </div>

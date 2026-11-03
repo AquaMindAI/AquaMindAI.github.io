@@ -1,0 +1,16 @@
+/* TEAM */
+Lead Researcher & Bioengineer: Süleyman Hacızadə (Suleyman Hajizade)
+ORCID: https://orcid.org/0009-0003-7842-1921
+Web of Science ResearcherID: NNH-0485-2025
+Affiliation 1: Western Caspian University (Qərbi Kaspi Universiteti), School of Advanced Technologies and Innovation Engineering
+Affiliation 2: Institute of Molecular Biology and Biotechnologies, Ministry of Science and Education of the Republic of Azerbaijan
+Location: Baku, Azerbaijan
+Contact: suleyman.hacizade1@gmail.com / suleyman.hacizade.232bioing@wcu.edu.az
+
+/* PROJECT */
+Name: AquaMind AI (Smart Aquaculture & Aquaponics Platform)
+Target Journal: Research Journal of Adaptive Agriculture and Aquaculture (RJAAA)
+Software Architecture: Next.js 14, Tailwind CSS, TypeScript, FastAPI, Python 3.11, Scikit-Learn, ESP32 FreeRTOS
+URL: https://aquamindai.github.io
+Repository: https://github.com/AquaMindAI/AquaMindAI.github.io
+License: Apache License 2.0

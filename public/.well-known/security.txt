@@ -1,0 +1,6 @@
+Contact: mailto:suleyman.hacizade1@gmail.com
+Contact: mailto:suleyman.hacizade.232bioing@wcu.edu.az
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: az, en
+Canonical: https://aquamindai.github.io/.well-known/security.txt
+Policy: https://aquamindai.github.io/access/

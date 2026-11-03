@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://aquamindai.github.io/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aquamindai.github.io/AquaMind-AI.png</image:loc>
+      <image:title>AquaMind AI — Ağıllı Akvakültür və Akvaponika Platforması</image:title>
+      <image:caption>AquaMind AI Real-Vaxt IoT və Süni İntellekt İdarəetmə Paneli</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aquamindai.github.io/research/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://aquamindai.github.io/AquaMind-AI.png</image:loc>
+      <image:title>AquaMind-AI Elmi Tədqiqat Məqaləsi (RJAAA)</image:title>
+      <image:caption>AquaMind-AI: An Intelligent IoT and Machine Learning Framework for Closed-Loop Smart Aquaponics</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aquamindai.github.io/architecture/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://aquamindai.github.io/AquaMind-AI.png</image:loc>
+      <image:title>AquaMind AI 4-Səviyyəli Sistem Arxitekturası və IoT Mühəndisliyi</image:title>
+      <image:caption>ESP32, DFRobot Sensorları, FastAPI və Random Forest Machine Learning Arxitekturası</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aquamindai.github.io/access/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://aquamindai.github.io/wiki/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+</urlset>

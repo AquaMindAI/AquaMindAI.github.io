@@ -1,0 +1,25 @@
+{
+  "name": "AquaMind AI — Ağıllı Akvakültür və Akvaponika Platforması",
+  "short_name": "AquaMind AI",
+  "description": "Azərbaycan Respublikası üçün hazırlanmış IoT sensor telemetriyası və Süni İntellekt əsaslı qapalı dövriyyəli ağıllı akvakültür idarəetmə platforması.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030f1a",
+  "theme_color": "#030f1a",
+  "orientation": "portrait-primary",
+  "categories": ["agriculture", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/AquaMind-AI.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/AquaMind-AI.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

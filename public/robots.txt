@@ -1,0 +1,41 @@
+# AquaMind AI — Search Engine Directives
+# https://aquamindai.github.io/robots.txt
+
+User-agent: *
+Allow: /
+Allow: /research/
+Allow: /architecture/
+Allow: /access/
+Allow: /wiki/
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Allow: /research/
+Allow: /architecture/
+Allow: /access/
+Allow: /wiki/
+
+User-agent: Googlebot-Image
+Allow: /AquaMind-AI.png
+Allow: /AquaMind_Logos/
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://aquamindai.github.io/sitemap.xml
+Host: https://aquamindai.github.io
