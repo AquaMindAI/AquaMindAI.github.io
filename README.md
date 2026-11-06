@@ -68,6 +68,15 @@ npm run build
 
 ---
 
+## 🔬 Scientific & Engineering Peer Review Compliance
+
+This public portal and its associated core systems have been upgraded according to comprehensive scientific audit standards:
+1. **Time-Series ML Methodology**: Transitioned from naive random sampling (leakage) to strict **chronological train/validation/test partitions** and **walk-forward expanding window cross-validation** for multi-horizon forecasting (1h, 3h, 6h).
+2. **Biological Instrumentation Boundary**: Explicitly delineates between physical stability monitoring (water temp, level, ambient RH) and the biochemical water chemistry requirements (continuous Dissolved Oxygen, pH, TAN, $\text{NO}_2^-$) mandatory for autonomous live-stock survival.
+3. **Edge Microcontroller Safety**: Standardized on logic-level MOSFET actuation (IRLZ44N/IRLB8721 with $V_{GS(th)} \le 2.0\text{ V}$), hardware watchdog timeouts (`WDTO_8S`), and normally-closed aeration circuits to guard against hypoxic system collapse.
+
+---
+
 ## 📜 License & Authorship
 
 Licensed under the [Apache License, Version 2.0](LICENSE).  
